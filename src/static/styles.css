@@ -28,6 +28,60 @@ header h1 {
   margin-bottom: 10px;
 }
 
+.hero-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+}
+
+.brand-block {
+  max-width: 640px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.hero-copy {
+  opacity: 0.95;
+}
+
+.auth-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.auth-status {
+  font-size: 14px;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.secondary-button,
+.primary-button {
+  background-color: #ffffff;
+  color: #1a237e;
+  border: 1px solid rgba(26, 35, 126, 0.3);
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.secondary-button:hover,
+.primary-button:hover {
+  background-color: #f0f2ff;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -68,6 +122,22 @@ section h3 {
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
+}
+
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.availability-pill {
+  align-self: flex-start;
+  font-size: 12px;
+  background: #e8eaf6;
+  color: #1a237e;
+  border-radius: 999px;
+  padding: 5px 10px;
+  white-space: nowrap;
 }
 
 .activity-card p {
@@ -111,14 +181,14 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
+  background: #fff;
+  border: 1px solid #ef9a9a;
   color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: 12px;
+  padding: 4px 8px;
   transition: all 0.2s;
-  border-radius: 3px;
+  border-radius: 999px;
 }
 
 .delete-btn:hover {
@@ -164,6 +234,68 @@ button:hover {
   background-color: #3949ab;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.helper-text {
+  margin-top: -10px;
+  margin-bottom: 14px;
+  color: #4f5b93;
+  font-size: 14px;
+}
+
+.locked {
+  opacity: 0.8;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  padding: 18px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.icon-button {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.icon-button:hover {
+  background: #e5e7eb;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -197,4 +329,27 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    text-align: left;
+  }
+
+  .auth-panel {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .auth-actions {
+    width: 100%;
+  }
+
+  .secondary-button {
+    flex: 1;
+  }
+
+  .activity-card-header {
+    flex-direction: column;
+  }
 }
