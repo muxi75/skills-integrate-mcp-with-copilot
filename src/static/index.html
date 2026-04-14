@@ -7,10 +7,46 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+    <header class="hero-header">
+      <div class="brand-block">
+        <p class="eyebrow">Mergington High School</p>
+        <h1>Extracurricular Activities</h1>
+        <p class="hero-copy">Browse activities freely. Teachers can log in to manage registrations.</p>
+      </div>
+
+      <div class="auth-panel">
+        <span id="auth-status" class="auth-status">Read-only mode</span>
+        <div class="auth-actions">
+          <button type="button" id="auth-button" class="secondary-button">User Login</button>
+          <button type="button" id="logout-button" class="secondary-button hidden">Logout</button>
+        </div>
+      </div>
     </header>
+
+    <section id="login-dialog" class="modal hidden" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="login-title">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Teacher access</p>
+            <h3 id="login-title">Login to manage activities</h3>
+          </div>
+          <button type="button" id="login-close" class="icon-button" aria-label="Close login dialog">Close</button>
+        </div>
+
+        <form id="login-form" class="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="primary-button">Login</button>
+          <div id="login-error" class="message error hidden"></div>
+        </form>
+      </div>
+    </section>
 
     <main>
       <section id="activities-container">
@@ -22,20 +58,21 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3 id="form-title">Teacher Access Required</h3>
+        <p id="auth-note" class="helper-text">Teacher login is required to register or remove students.</p>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="email">Student Email</label>
+            <input type="email" id="email" required placeholder="student@mergington.edu" />
           </div>
           <div class="form-group">
-            <label for="activity">Select Activity:</label>
+            <label for="activity">Select Activity</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" id="submit-button">Register Student</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
